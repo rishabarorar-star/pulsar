@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #05070B;
+    --bg-surface: #0A1018;
+    --bg-card: #0E1624;
+    --cyan-accent: #00D9FF;
+    --blue-accent: #2563EB;
+    --violet-accent: #6C5CE7;
+    --border-dark: rgba(0, 217, 255, 0.15);
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #F1F5F9;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Utilities for High-Tech / Electro-Optics Theme */
+.bg-radar-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 217, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 217, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(0, 217, 255, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.scanline-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 217, 255, 0.03) 50%,
+    rgba(0, 217, 255, 0.03)
+  );
+  background-size: 100% 4px;
+}
+
+.glass-panel {
+  background: rgba(10, 16, 24, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 217, 255, 0.12);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(14, 22, 36, 0.85);
+  border-color: rgba(0, 217, 255, 0.35);
+  box-shadow: 0 0 25px -5px rgba(0, 217, 255, 0.2), inset 0 0 15px rgba(0, 217, 255, 0.05);
+}
+
+.glass-nav {
+  background: rgba(5, 7, 11, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.15);
+}
+
+.cyan-glow-text {
+  text-shadow: 0 0 12px rgba(0, 217, 255, 0.5), 0 0 30px rgba(0, 217, 255, 0.2);
+}
+
+.cyan-glow-box {
+  box-shadow: 0 0 30px -5px rgba(0, 217, 255, 0.25);
+}
+
+.purple-glow-box {
+  box-shadow: 0 0 30px -5px rgba(108, 92, 231, 0.25);
+}
+
+.hud-corner {
+  position: relative;
+}
+
+.hud-corner::before, .hud-corner::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: rgba(0, 217, 255, 0.4);
+}
+
+.hud-corner::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid rgba(0, 217, 255, 0.6);
+  border-left: 1px solid rgba(0, 217, 255, 0.6);
+}
+
+.hud-corner::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.6);
+  border-right: 1px solid rgba(0, 217, 255, 0.6);
+}
+
+/* Animations */
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-radar {
+  animation: radar-sweep 12s linear infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}
+
+@keyframes beam-scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-beam {
+  animation: beam-scan 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .animate-radar, .animate-pulse-slow, .animate-beam {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
