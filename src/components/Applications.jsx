@@ -58,21 +58,21 @@ export default function Applications() {
   ];
 
   return (
-    <section id="applications" className="relative py-28 bg-[#070C14] border-t border-slate-800/80 overflow-hidden">
+    <section id="applications" className="relative py-28 section-bg border-t border-subtle overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 text-xs font-mono-tech tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-accent-10 border border-subtle text-accent text-xs font-mono-tech tracking-widest uppercase">
             <Radio className="w-3.5 h-3.5" />
             <span>FIELD DEPLOYMENT OPERATIONAL SCENARIOS</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-heading tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary font-heading tracking-tight">
             BUILT FOR DEMANDING ENVIRONMENTS
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+          <p className="text-secondary text-base sm:text-lg leading-relaxed">
             The binocular is suitable for defence, border surveillance, perimeter security, search and rescue, reconnaissance and long-range observation applications. Its rugged and portable design makes it suitable for field deployment and handheld operation.
           </p>
         </div>
@@ -91,21 +91,21 @@ export default function Applications() {
                   onClick={() => setActiveApp(app.id)}
                   className={`cursor-pointer p-4 rounded-xl transition-all duration-300 border flex flex-col justify-between ${
                     isSelected
-                      ? 'glass-panel border-cyan-400 bg-slate-900/90 shadow-[0_0_20px_rgba(0,217,255,0.25)]'
-                      : 'bg-slate-900/50 border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/80'
+                      ? 'card bg-accent-10 accent-glow-box'
+                      : 'card'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <div className={`p-2.5 rounded ${isSelected ? 'bg-cyan-500 text-slate-950' : 'bg-slate-800 text-cyan-400'}`}>
+                    <div className={`p-2.5 rounded ${isSelected ? 'bg-accent-10 text-primary' : 'bg-accent-10 text-secondary'}`}>
                       <Icon className="w-4 h-4" />
                     </div>
-                    <span className="text-[10px] font-mono-tech text-slate-500">SECTOR</span>
+                    <span className="text-[10px] font-mono-tech text-muted">SECTOR</span>
                   </div>
 
                   <div>
-                    <h3 className="font-heading font-bold text-base text-white mb-1 tracking-wide">{app.title}</h3>
-                    <p className="text-[11px] font-mono-tech text-cyan-400 mb-2">{app.tagline}</p>
-                    <p className="text-xs text-slate-300 leading-relaxed">{app.desc}</p>
+                    <h3 className="font-heading font-bold text-base text-primary mb-1 tracking-wide">{app.title}</h3>
+                    <p className="text-[11px] font-mono-tech text-accent mb-2">{app.tagline}</p>
+                    <p className="text-xs text-secondary leading-relaxed">{app.desc}</p>
                   </div>
                 </div>
               );
@@ -114,38 +114,38 @@ export default function Applications() {
 
           {/* Right Field Op Preview Frame */}
           <div className="lg:col-span-6 relative">
-            <div className="h-full min-h-[380px] rounded-2xl glass-panel p-3 border border-cyan-500/30 overflow-hidden relative flex flex-col justify-between group">
+            <div className="h-full min-h-[380px] rounded-2xl card p-3 border border-subtle overflow-hidden relative flex flex-col justify-between group">
               
               {/* Background Tactical Image */}
               <img
-                src="/images/field-op.png"
+                src={import.meta.env.BASE_URL + 'images/field-op.png'}
                 alt="Tactical Field Deployment"
                 className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105"
               />
 
               {/* Dark Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/60 to-transparent" />
 
               {/* Top HUD Telemetry */}
               <div className="relative z-10 p-4 flex items-center justify-between">
-                <div className="inline-flex items-center gap-2 bg-slate-950/80 px-3 py-1 rounded border border-cyan-500/40 text-xs font-mono-tech text-cyan-300">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                <div className="inline-flex items-center gap-2 bg-accent-10 px-3 py-1 rounded border border-subtle text-xs font-mono-tech text-accent">
+                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                   <span>ACTIVE DEPLOYMENT SCENARIO</span>
                 </div>
-                <span className="text-[10px] font-mono-tech text-slate-400 bg-slate-950/80 px-2 py-1 rounded">
+                <span className="text-[10px] font-mono-tech text-muted bg-accent-10 px-2 py-1 rounded">
                   MIL-STD OPERATIONAL
                 </span>
               </div>
 
               {/* Bottom Selected Details */}
-              <div className="relative z-10 p-6 glass-panel rounded-xl border border-cyan-500/30 backdrop-blur-md">
-                <h3 className="text-2xl font-bold font-heading text-white mb-1 flex items-center gap-2">
+              <div className="relative z-10 p-6 card rounded-xl border border-subtle backdrop-blur-md">
+                <h3 className="text-2xl font-bold font-heading text-primary mb-1 flex items-center gap-2">
                   {appList.find(a => a.id === activeApp)?.title}
                 </h3>
-                <p className="text-xs font-mono-tech text-cyan-300 mb-2">
+                <p className="text-xs font-mono-tech text-accent mb-2">
                   {appList.find(a => a.id === activeApp)?.tagline}
                 </p>
-                <p className="text-sm text-slate-200 leading-relaxed">
+                <p className="text-sm text-secondary leading-relaxed">
                   {appList.find(a => a.id === activeApp)?.desc}
                 </p>
               </div>

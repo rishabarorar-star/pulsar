@@ -28,7 +28,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#05070B] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="relative min-h-screen theme-root">
       {/* Background Neural / Grid Canvas & Ambient Lighting */}
       <AnimatedBackground />
 

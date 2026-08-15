@@ -86,9 +86,9 @@ export default function AnimatedBackground() {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-60" />
 
       {/* Atmospheric radial gradient glows */}
-      <div className="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] animate-pulse-slow" />
+      <div className="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-accent-10 rounded-full blur-[140px] animate-pulse-slow" />
       <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[160px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
-      <div className="absolute -bottom-20 left-1/3 w-[700px] h-[700px] bg-cyan-600/5 rounded-full blur-[180px]" />
+      <div className="absolute -bottom-20 left-1/3 w-[700px] h-[700px] bg-accent-5 rounded-full blur-[180px]" />
 
       {/* Futuristic Scanline texture */}
       <div className="absolute inset-0 scanline-overlay pointer-events-none opacity-40" />

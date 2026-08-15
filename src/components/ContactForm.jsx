@@ -93,44 +93,44 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="relative py-28 bg-[#05070B] border-t border-slate-800/80 overflow-hidden">
+    <section id="contact" className="relative py-28 section-bg border-t border-subtle overflow-hidden">
       {/* Background Radial Glow */}
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] bg-accent-10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center space-y-4 mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 text-xs font-mono-tech tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-accent-10 border border-subtle text-accent text-xs font-mono-tech tracking-widest uppercase">
               <Mail className="w-3.5 h-3.5" />
               <span>DIRECT PRODUCT ENQUIRY</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-heading tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary font-heading tracking-tight">
               REQUEST PRODUCT INFORMATION
             </h2>
 
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            <p className="text-secondary text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
               Interested in the Pulsar Thermal Fusion Binocular? Submit your details and our team will get in touch.
             </p>
           </div>
 
           {/* Form Card */}
-          <div className="glass-panel rounded-2xl p-6 sm:p-10 border border-cyan-500/30 shadow-[0_0_40px_rgba(0,217,255,0.15)] relative hud-corner">
+          <div className="card rounded-2xl p-6 sm:p-10 border border-subtle shadow relative hud-corner">
             
             {status === 'success' ? (
-              <div className="py-12 text-center space-y-4 animate-in zoom-in-95 duration-300">
-                <div className="w-16 h-16 rounded-full bg-cyan-950 border-2 border-cyan-400 text-cyan-300 flex items-center justify-center mx-auto shadow-[0_0_30px_rgba(0,217,255,0.4)]">
+                <div className="py-12 text-center space-y-4 animate-in zoom-in-95 duration-300">
+                <div className="w-16 h-16 rounded-full bg-accent-10 border-2 border-subtle text-accent flex items-center justify-center mx-auto shadow-md">
                   <CheckCircle2 className="w-9 h-9" />
                 </div>
-                <h3 className="text-2xl font-bold font-heading text-white">Enquiry Received</h3>
-                <p className="text-sm font-mono-tech text-cyan-300 max-w-md mx-auto">
+                <h3 className="text-2xl font-bold font-heading text-primary">Enquiry Received</h3>
+                <p className="text-sm font-mono-tech text-accent max-w-md mx-auto">
                   Thank you. Your enquiry has been received. Our team will contact you shortly.
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
-                  className="mt-4 px-6 py-2.5 rounded glass-panel text-xs font-mono-tech text-slate-300 hover:text-white border border-cyan-500/30"
+                  className="mt-4 px-6 py-2.5 rounded btn-ghost text-xs font-mono-tech text-secondary border border-subtle"
                 >
                   Send Another Enquiry
                 </button>
@@ -139,7 +139,7 @@ export default function ContactForm() {
               <form onSubmit={handleSubmit} noValidate className="space-y-6">
                 
                 {status === 'error' && (
-                  <div className="p-4 rounded-lg bg-red-950/60 border border-red-500/40 flex items-center gap-3 text-red-300 text-xs font-mono-tech animate-in fade-in">
+                  <div className="p-4 rounded-lg bg-red-50 border border-red-200 flex items-center gap-3 text-red-600 text-xs font-mono-tech animate-in fade-in">
                     <AlertCircle className="w-5 h-5 shrink-0 text-red-400" />
                     <span>{errorMessage || "We couldn't submit your enquiry. Please try again."}</span>
                   </div>
@@ -149,11 +149,11 @@ export default function ContactForm() {
                   
                   {/* Full Name */}
                   <div className="space-y-2">
-                    <label htmlFor="name" className="block text-xs font-mono-tech text-slate-300 uppercase tracking-wider">
-                      Full Name <span className="text-cyan-400">*</span>
+                    <label htmlFor="name" className="block text-xs font-mono-tech text-secondary uppercase tracking-wider">
+                      Full Name <span className="text-accent">*</span>
                     </label>
                     <div className="relative">
-                      <User className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                      <User className="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
                       <input
                         type="text"
                         id="name"
@@ -161,8 +161,8 @@ export default function ContactForm() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="e.g. Cmdr. Rajesh Verma"
-                        className={`w-full pl-10 pr-4 py-3 rounded-lg bg-slate-950/80 border text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 font-sans transition-all ${
-                          errors.name ? 'border-red-500' : 'border-slate-800 focus:border-cyan-500'
+                        className={`w-full pl-10 pr-4 py-3 rounded-lg bg-card border text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 font-sans transition-all ${
+                          errors.name ? 'border-red-500' : 'border-subtle focus:border-accent'
                         }`}
                       />
                     </div>
@@ -171,11 +171,11 @@ export default function ContactForm() {
 
                   {/* Company / Organization */}
                   <div className="space-y-2">
-                    <label htmlFor="company" className="block text-xs font-mono-tech text-slate-300 uppercase tracking-wider">
-                      Company / Organization <span className="text-cyan-400">*</span>
+                    <label htmlFor="company" className="block text-xs font-mono-tech text-secondary uppercase tracking-wider">
+                      Company / Organization <span className="text-accent">*</span>
                     </label>
                     <div className="relative">
-                      <Building className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                      <Building className="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
                       <input
                         type="text"
                         id="company"
@@ -183,8 +183,8 @@ export default function ContactForm() {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="e.g. Strategic Defence Systems"
-                        className={`w-full pl-10 pr-4 py-3 rounded-lg bg-slate-950/80 border text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 font-sans transition-all ${
-                          errors.company ? 'border-red-500' : 'border-slate-800 focus:border-cyan-500'
+                        className={`w-full pl-10 pr-4 py-3 rounded-lg bg-card border text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 font-sans transition-all ${
+                          errors.company ? 'border-red-500' : 'border-subtle focus:border-accent'
                         }`}
                       />
                     </div>
@@ -193,11 +193,11 @@ export default function ContactForm() {
 
                   {/* Email */}
                   <div className="space-y-2">
-                    <label htmlFor="email" className="block text-xs font-mono-tech text-slate-300 uppercase tracking-wider">
-                      Email Address <span className="text-cyan-400">*</span>
+                    <label htmlFor="email" className="block text-xs font-mono-tech text-secondary uppercase tracking-wider">
+                      Email Address <span className="text-accent">*</span>
                     </label>
                     <div className="relative">
-                      <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                      <Mail className="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
                       <input
                         type="email"
                         id="email"
@@ -205,8 +205,8 @@ export default function ContactForm() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="r.verma@defencesys.in"
-                        className={`w-full pl-10 pr-4 py-3 rounded-lg bg-slate-950/80 border text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 font-sans transition-all ${
-                          errors.email ? 'border-red-500' : 'border-slate-800 focus:border-cyan-500'
+                        className={`w-full pl-10 pr-4 py-3 rounded-lg bg-card border text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 font-sans transition-all ${
+                          errors.email ? 'border-red-500' : 'border-subtle focus:border-accent'
                         }`}
                       />
                     </div>
@@ -215,11 +215,11 @@ export default function ContactForm() {
 
                   {/* Phone Number */}
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="block text-xs font-mono-tech text-slate-300 uppercase tracking-wider">
-                      Phone Number <span className="text-cyan-400">*</span>
+                    <label htmlFor="phone" className="block text-xs font-mono-tech text-secondary uppercase tracking-wider">
+                      Phone Number <span className="text-accent">*</span>
                     </label>
                     <div className="relative">
-                      <Phone className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                      <Phone className="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
                       <input
                         type="tel"
                         id="phone"
@@ -227,8 +227,8 @@ export default function ContactForm() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
-                        className={`w-full pl-10 pr-4 py-3 rounded-lg bg-slate-950/80 border text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 font-sans transition-all ${
-                          errors.phone ? 'border-red-500' : 'border-slate-800 focus:border-cyan-500'
+                        className={`w-full pl-10 pr-4 py-3 rounded-lg bg-card border text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 font-sans transition-all ${
+                          errors.phone ? 'border-red-500' : 'border-subtle focus:border-accent'
                         }`}
                       />
                     </div>
@@ -239,11 +239,11 @@ export default function ContactForm() {
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <label htmlFor="message" className="block text-xs font-mono-tech text-slate-300 uppercase tracking-wider">
-                    Message / Deployment Requirements <span className="text-cyan-400">*</span>
+                  <label htmlFor="message" className="block text-xs font-mono-tech text-secondary uppercase tracking-wider">
+                    Message / Deployment Requirements <span className="text-accent">*</span>
                   </label>
                   <div className="relative">
-                    <MessageSquare className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
+                    <MessageSquare className="w-4 h-4 text-muted absolute left-3.5 top-3.5" />
                     <textarea
                       id="message"
                       name="message"
@@ -251,8 +251,8 @@ export default function ContactForm() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Specify system quantity, operational environment or enquiry details..."
-                      className={`w-full pl-10 pr-4 py-3 rounded-lg bg-slate-950/80 border text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 font-sans transition-all ${
-                        errors.message ? 'border-red-500' : 'border-slate-800 focus:border-cyan-500'
+                      className={`w-full pl-10 pr-4 py-3 rounded-lg bg-card border text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 font-sans transition-all ${
+                        errors.message ? 'border-red-500' : 'border-subtle focus:border-accent'
                       }`}
                     />
                   </div>
@@ -261,19 +261,19 @@ export default function ContactForm() {
 
                 {/* Submit Button */}
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="flex items-center gap-2 text-xs font-mono-tech text-slate-400">
-                    <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                  <div className="flex items-center gap-2 text-xs font-mono-tech text-muted">
+                    <ShieldCheck className="w-4 h-4 text-accent" />
                     <span>256-bit Encrypted Transmission</span>
                   </div>
 
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="w-full sm:w-auto px-8 py-4 rounded bg-cyan-500 text-slate-950 font-bold text-xs font-mono-tech tracking-widest uppercase flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(0,217,255,0.4)] hover:bg-cyan-400 disabled:opacity-50 transition-all duration-300 cursor-pointer"
+                    className="w-full sm:w-auto btn-primary font-bold text-xs font-mono-tech tracking-widest uppercase flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
                   >
                     {status === 'submitting' ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin text-slate-950" />
+                        <Loader2 className="w-4 h-4 animate-spin text-white" />
                         <span>PROCESSING...</span>
                       </>
                     ) : (

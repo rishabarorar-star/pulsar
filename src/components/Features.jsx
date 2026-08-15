@@ -70,7 +70,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="relative py-28 bg-[#0A1018] border-t border-slate-800/60 overflow-hidden">
+    <section id="features" className="relative py-28 section-bg border-t border-subtle overflow-hidden">
       {/* Subtle Dot Grid */}
       <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
 
@@ -78,16 +78,16 @@ export default function Features() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 text-xs font-mono-tech tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-accent-10 border border-subtle text-accent text-xs font-mono-tech tracking-widest uppercase">
             <Cpu className="w-3.5 h-3.5" />
             <span>SYSTEM CAPABILITIES</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-heading tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary font-heading tracking-tight">
             ENGINEERED FOR COMPLETE AWARENESS
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+          <p className="text-secondary text-base sm:text-lg leading-relaxed">
             Advanced imaging capabilities designed for demanding observation environments.
           </p>
         </div>
@@ -105,41 +105,33 @@ export default function Features() {
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 className={`relative rounded-xl p-6 transition-all duration-300 flex flex-col justify-between ${
                   item.highlight
-                    ? 'glass-panel bg-gradient-to-b from-cyan-950/40 to-slate-900/90 border-2 border-cyan-400/80 shadow-[0_0_30px_rgba(0,217,255,0.2)] md:col-span-2 lg:col-span-1'
-                    : 'glass-panel glass-panel-hover border-slate-800'
+                    ? 'card highlighted md:col-span-2 lg:col-span-1'
+                    : 'card'
                 }`}
               >
                 <div>
                   {/* Card Header & Technical Identifier */}
                   <div className="flex items-center justify-between mb-5">
-                    <div
-                      className={`p-3 rounded-lg flex items-center justify-center ${
-                        item.highlight
-                          ? 'bg-cyan-500 text-slate-950 shadow-[0_0_15px_rgba(0,217,255,0.5)]'
-                          : 'bg-slate-900 border border-cyan-500/20 text-cyan-400'
-                      }`}
-                    >
+                    <div className={`p-3 rounded-lg flex items-center justify-center ${item.highlight ? 'bg-accent-10 text-primary shadow-sm' : 'bg-accent-10 border border-subtle text-accent'}`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-mono-tech text-slate-500 tracking-wider">
-                      [SYS-{item.id}]
-                    </span>
+                    <span className="text-[11px] font-mono-tech text-muted tracking-wider">[SYS-{item.id}]</span>
                   </div>
 
                   {/* Feature Title */}
-                  <h3 className="font-heading font-bold text-lg text-white mb-2.5 tracking-wide">
+                  <h3 className="font-heading font-bold text-lg text-primary mb-2.5 tracking-wide">
                     {item.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-slate-300 leading-relaxed font-sans">
+                  <p className="text-sm text-secondary leading-relaxed font-sans">
                     {item.desc}
                   </p>
                 </div>
 
                 {item.highlight && (
-                  <div className="mt-4 pt-4 border-t border-cyan-500/30 flex items-center gap-2 text-xs font-mono-tech text-cyan-300">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                  <div className="mt-4 pt-4 border-t border-subtle flex items-center gap-2 text-xs font-mono-tech text-accent">
+                    <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                     <span>CORE ARCHITECTURE FEATURE</span>
                   </div>
                 )}

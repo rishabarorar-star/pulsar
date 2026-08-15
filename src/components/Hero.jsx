@@ -14,7 +14,7 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
   ];
 
   return (
-    <section id="overview" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+    <section id="overview" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden section-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -26,28 +26,26 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
             className="lg:col-span-6 space-y-6"
           >
             {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono-tech tracking-widest uppercase shadow-[0_0_15px_rgba(0,217,255,0.15)]">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-accent-10 border border-subtle text-accent text-xs font-mono-tech tracking-widest uppercase shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <span>PULSAR ADVANCED ELECTRO-OPTICS</span>
-              <span className="text-slate-500">|</span>
-              <span className="text-slate-400 font-normal">SYS.REF #8820</span>
+              <span className="text-muted">|</span>
+              <span className="text-muted font-normal">SYS.REF #8820</span>
             </div>
 
             {/* Headlines */}
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-none font-heading">
-                THERMAL + OPTICAL <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-300 to-indigo-400 cyan-glow-text">
-                  FUSION.
-                </span>
-              </h1>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-slate-200 tracking-wide font-heading">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-primary leading-none font-heading">
+                  THERMAL + OPTICAL <br />
+                  <span className="text-primary font-heading">FUSION.</span>
+                </h1>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-secondary tracking-wide font-heading">
                 SEE BEYOND THE VISIBLE.
               </h2>
             </div>
 
             {/* Supporting text */}
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl font-sans">
+            <p className="text-secondary text-base sm:text-lg leading-relaxed max-w-xl font-sans">
               A high-performance multifunctional thermal fusion binocular engineered for day-and-night observation, surveillance, reconnaissance and enhanced situational awareness.
             </p>
 
@@ -56,7 +54,7 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
               <a
                 href="#contact"
                 onClick={onRequestInfo}
-                className="px-7 py-3.5 rounded bg-cyan-500 text-slate-950 font-bold text-sm font-mono-tech tracking-wider uppercase flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(0,217,255,0.4)] hover:bg-cyan-400 hover:shadow-[0_0_35px_rgba(0,217,255,0.6)] transition-all duration-300 active:scale-98 focus:outline-none focus:ring-2 focus:ring-cyan-300"
+                className="btn-primary font-bold text-sm font-mono-tech tracking-wider uppercase gap-2 focus:outline-none"
               >
                 <span>Request Information</span>
                 <Crosshair className="w-4 h-4" />
@@ -64,26 +62,26 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
 
               <button
                 onClick={onOpenCatalogue}
-                className="px-7 py-3.5 rounded glass-panel glass-panel-hover text-slate-200 font-semibold text-sm font-mono-tech tracking-wider uppercase flex items-center justify-center gap-2 border border-cyan-500/30 hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/40"
+                className="btn-ghost font-semibold text-sm font-mono-tech tracking-wider uppercase flex items-center justify-center gap-2 focus:outline-none"
               >
-                <FileText className="w-4 h-4 text-cyan-400" />
+                <FileText className="w-4 h-4 text-accent" />
                 <span>View Catalogue</span>
               </button>
             </div>
 
             {/* Quick Metrics Bar */}
-            <div className="pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4">
+            <div className="pt-6 border-t border-subtle grid grid-cols-3 gap-4">
               <div>
-                <span className="block text-[10px] font-mono-tech text-slate-400 uppercase tracking-widest">IMAGING MODES</span>
-                <span className="text-sm font-semibold text-cyan-300 font-mono-tech">Dual-Channel + Fusion</span>
+                <span className="block text-[10px] font-mono-tech text-muted uppercase tracking-widest">IMAGING MODES</span>
+                <span className="text-sm font-semibold text-accent font-mono-tech">Dual-Channel + Fusion</span>
               </div>
               <div>
-                <span className="block text-[10px] font-mono-tech text-slate-400 uppercase tracking-widest">OPERATION</span>
-                <span className="text-sm font-semibold text-slate-200 font-mono-tech">24/7 Day & Night</span>
+                <span className="block text-[10px] font-mono-tech text-muted uppercase tracking-widest">OPERATION</span>
+                <span className="text-sm font-semibold text-secondary font-mono-tech">24/7 Day & Night</span>
               </div>
               <div>
-                <span className="block text-[10px] font-mono-tech text-slate-400 uppercase tracking-widest">DEPLOYMENT</span>
-                <span className="text-sm font-semibold text-slate-200 font-mono-tech">Rugged Tactical</span>
+                <span className="block text-[10px] font-mono-tech text-muted uppercase tracking-widest">DEPLOYMENT</span>
+                <span className="text-sm font-semibold text-secondary font-mono-tech">Rugged Tactical</span>
               </div>
             </div>
           </motion.div>
@@ -96,19 +94,19 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
             className="lg:col-span-6 relative flex items-center justify-center"
           >
             {/* Ambient Lighting Spheres */}
-            <div className="absolute w-[340px] sm:w-[480px] h-[340px] sm:h-[480px] rounded-full bg-cyan-500/20 blur-[90px] animate-pulse-slow pointer-events-none" />
+            <div className="absolute w-[340px] sm:w-[480px] h-[340px] sm:h-[480px] rounded-full bg-accent-10 blur-[90px] animate-pulse-slow pointer-events-none" />
             <div className="absolute w-[280px] sm:w-[380px] h-[280px] sm:h-[380px] rounded-full bg-violet-600/20 blur-[100px] pointer-events-none" style={{ animationDelay: '3s' }} />
 
             {/* Futuristic Animated Radar Ring */}
-            <div className="absolute w-[360px] sm:w-[460px] h-[360px] sm:h-[460px] rounded-full border border-cyan-500/20 border-dashed animate-radar pointer-events-none" />
-            <div className="absolute w-[280px] sm:w-[380px] h-[280px] sm:h-[380px] rounded-full border border-cyan-500/10 pointer-events-none" />
+            <div className="absolute w-[360px] sm:w-[460px] h-[360px] sm:h-[460px] rounded-full border border-subtle border-dashed animate-radar pointer-events-none" />
+            <div className="absolute w-[280px] sm:w-[380px] h-[280px] sm:h-[380px] rounded-full border border-subtle pointer-events-none" />
 
             {/* Product Image Frame */}
             <div className="relative w-full max-w-lg aspect-square flex items-center justify-center p-4">
-              <div className="relative z-10 w-full h-full rounded-2xl glass-panel p-3 border border-cyan-500/25 shadow-[0_0_50px_rgba(0,217,255,0.15)] overflow-hidden group">
+              <div className="relative z-10 w-full h-full rounded-2xl card p-3 border border-subtle shadow overflow-hidden group">
                 {/* Visual Image */}
                 <img
-                  src="/images/hero-binocular.png"
+                  src={import.meta.env.BASE_URL + 'images/hero-binocular.png'}
                   alt="Pulsar Multifunctional Thermal Fusion Binocular"
                   className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {
@@ -119,7 +117,7 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
                 />
 
                 {/* Subtle Light Beam Scan Effect */}
-                <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-40 animate-beam pointer-events-none" />
+                <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent to-transparent opacity-30 animate-beam pointer-events-none" />
 
                 {/* Interactive HUD Technical Badges around product */}
                 {hudItems.map((item) => {
@@ -134,20 +132,20 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
                       onMouseLeave={() => setActiveHud(null)}
                     >
                       <div
-                        className={`cursor-pointer px-2.5 py-1 rounded bg-slate-950/80 backdrop-blur-md border text-[10px] font-mono-tech tracking-widest flex items-center gap-1.5 transition-all duration-300 ${
+                        className={`cursor-pointer px-2.5 py-1 rounded bg-accent-10 border text-[10px] font-mono-tech tracking-widest flex items-center gap-1.5 transition-all duration-300 ${
                           isActive
-                            ? 'border-cyan-400 text-cyan-300 shadow-[0_0_15px_rgba(0,217,255,0.4)] scale-110'
-                            : 'border-cyan-500/30 text-slate-300 hover:border-cyan-400/60'
+                            ? 'border-accent text-primary shadow-sm scale-110'
+                            : 'border-subtle text-muted hover:border-accent'
                         }`}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-                        <Icon className="w-3 h-3 text-cyan-400" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping" />
+                        <Icon className="w-3 h-3 text-accent" />
                         <span>{item.label}</span>
                       </div>
 
                       {/* Tooltip on hover */}
                       {isActive && (
-                        <div className="absolute top-full mt-1.5 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-cyan-950/90 border border-cyan-500/50 px-2.5 py-1 rounded text-[10px] font-mono-tech text-cyan-200 shadow-lg z-30 animate-in fade-in zoom-in-95">
+                        <div className="absolute top-full mt-1.5 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-accent-10 border border-subtle px-2.5 py-1 rounded text-[10px] font-mono-tech text-accent shadow z-30 animate-in fade-in zoom-in-95">
                           {item.detail}
                         </div>
                       )}
@@ -156,10 +154,10 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
                 })}
 
                 {/* Tactical Frame Reticle Corners */}
-                <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-cyan-400" />
-                <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-cyan-400" />
-                <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-cyan-400" />
-                <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-cyan-400" />
+                <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-accent" />
+                <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-accent" />
+                <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-accent" />
+                <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-accent" />
               </div>
             </div>
 
