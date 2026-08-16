@@ -160,7 +160,7 @@ export default function ContactForm() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="e.g. Cmdr. Rajesh Verma"
+                        placeholder="e.g. Name"
                         className={`w-full pl-10 pr-4 py-3 rounded-lg bg-card border text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 font-sans transition-all ${
                           errors.name ? 'border-red-500' : 'border-subtle focus:border-accent'
                         }`}
@@ -182,7 +182,7 @@ export default function ContactForm() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        placeholder="e.g. Strategic Defence Systems"
+                        placeholder="e.g. Organization"
                         className={`w-full pl-10 pr-4 py-3 rounded-lg bg-card border text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 font-sans transition-all ${
                           errors.company ? 'border-red-500' : 'border-subtle focus:border-accent'
                         }`}
@@ -204,7 +204,7 @@ export default function ContactForm() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="r.verma@defencesys.in"
+                        placeholder="email"
                         className={`w-full pl-10 pr-4 py-3 rounded-lg bg-card border text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 font-sans transition-all ${
                           errors.email ? 'border-red-500' : 'border-subtle focus:border-accent'
                         }`}
@@ -226,7 +226,7 @@ export default function ContactForm() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91"
                         className={`w-full pl-10 pr-4 py-3 rounded-lg bg-card border text-sm text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 font-sans transition-all ${
                           errors.phone ? 'border-red-500' : 'border-subtle focus:border-accent'
                         }`}

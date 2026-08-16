@@ -106,9 +106,9 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
               <div className="relative z-10 w-full h-full rounded-2xl card p-3 border border-subtle shadow overflow-hidden group">
                 {/* Visual Image */}
                 <img
-                  src={import.meta.env.BASE_URL + 'images/hero-binocular.png'}
+                  src={import.meta.env.BASE_URL + 'images/hero-binocular.jpeg'}
                   alt="Pulsar Multifunctional Thermal Fusion Binocular"
-                  className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain rounded-xl transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {
                     // Fallback placeholder graphic if image fails
                     e.target.onerror = null;
@@ -143,12 +143,6 @@ export default function Hero({ onOpenCatalogue, onRequestInfo }) {
                         <span>{item.label}</span>
                       </div>
 
-                      {/* Tooltip on hover */}
-                      {isActive && (
-                        <div className="absolute top-full mt-1.5 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-accent-10 border border-subtle px-2.5 py-1 rounded text-[10px] font-mono-tech text-accent shadow z-30 animate-in fade-in zoom-in-95">
-                          {item.detail}
-                        </div>
-                      )}
                     </div>
                   );
                 })}

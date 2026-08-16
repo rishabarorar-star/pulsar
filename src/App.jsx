@@ -3,7 +3,6 @@ import AnimatedBackground from './components/AnimatedBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProductOverview from './components/ProductOverview';
-import FusionShowcase from './components/FusionShowcase';
 import Features from './components/Features';
 import Applications from './components/Applications';
 import Specifications from './components/Specifications';
@@ -44,7 +43,7 @@ export default function App() {
 
         <ProductOverview />
 
-        <FusionShowcase />
+
 
         <Features />
 
